@@ -18,8 +18,8 @@ $ yarn create rtl-tutorial
 react-testing-library 를 프로젝트에 설치해봅시다.
 
 ```bash
-$ yarn add react-testing-library jest-dom
-# 또는 npm install --save react-testing-library jest-dom
+$ yarn add @testing-library/react jest-dom
+# 또는 npm install --save @testing-library/react jest-dom
 ```
 
 > jest-dom 은 jest 확장으로서, DOM 에 관련된 `matcher` 를 추가해줍니다.
@@ -31,7 +31,7 @@ $ yarn add react-testing-library jest-dom
 #### `src/setupTests.js`
 
 ```javascript
-import 'react-testing-library/cleanup-after-each';
+import '@testing-library/react';
 import 'jest-dom/extend-expect';
 ```
 
@@ -85,7 +85,7 @@ App 을 수정하셨으면, `yarn start` (혹은 `npm start`) 를 입력하여 �
 
 ```jsx
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import Profile from './Profile';
 
 describe('<Profile />', () => {
@@ -344,7 +344,7 @@ export default App;
 
 ```jsx
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import Counter from './Counter';
 
 describe('<Counter />', () => {
